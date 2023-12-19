@@ -1,5 +1,4 @@
-﻿
-// Знакомство с языками программирования (семинары)
+﻿// Знакомство с языками программирования (семинары)
 // Урок 3. Массивы
 // Домашнее задание
 // 
@@ -16,15 +15,10 @@ for (int i = 0; i < array.Length; i++)
 {
     array[i] = new Random().Next(1, 101);
     Console.Write(array[i] + " ");
-}
-
-Console.WriteLine();
-
-for (int i = 0; i < array.Length; i++)
-{
     if (array[i] > 19 && array[i] < 91)
     {
         count++;
     }
 }
+Console.WriteLine();
 Console.WriteLine("Количество элементов массива в отрезке [20,90] = " + count);
