@@ -7,18 +7,40 @@
 // значения которых лежат в отрезке [20,90].
 // 
 // Решение:
-
+//
+// int[] array = new int[10];
+// int count = 0;
+//
+// for (int i = 0; i < array.Length; i++)
+// {
+//     array[i] = new Random().Next(1, 101);
+//     Console.Write(array[i] + " ");
+//     if (array[i] > 19 && array[i] < 91)
+//     {
+//         count++;
+//     }
+// }
+// Console.WriteLine();
+// Console.WriteLine("Количество элементов массива в отрезке [20,90] = " + count);
+//
+//-----------------------------------------------------
+//
+// Задача 2: Задайте массив на 10 целых чисел. Напишите
+// программу, которая определяет количество чётных чисел
+// в массиве.
+//
+// Решение:
+// 
 int[] array = new int[10];
 int count = 0;
-
 for (int i = 0; i < array.Length; i++)
 {
-    array[i] = new Random().Next(1, 101);
+    array[i] = new Random().Next(-10, 11);
     Console.Write(array[i] + " ");
-    if (array[i] > 19 && array[i] < 91)
+    if (array[i] % 2 == 0)
     {
         count++;
     }
 }
 Console.WriteLine();
-Console.WriteLine("Количество элементов массива в отрезке [20,90] = " + count);
+Console.WriteLine("Количество чётных чисел = " + count);
