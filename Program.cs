@@ -53,33 +53,82 @@
 //
 // Решение:
 //
-Console.WriteLine("Введите размер массива");
-int count = Convert.ToInt32(Console.ReadLine());
-double[] array = new double[count];
+// Console.WriteLine("Введите размер массива");
+// int count = Convert.ToInt32(Console.ReadLine());
+// double[] array = new double[count];
+//
+// for (int i = 0; i < count; i++)
+// {
+//     array[i] = new Random().Next(101, 10000);
+//     array[i] /= 100;
+//     Console.Write(array[i] + " ");
+// }
+//
+// Console.WriteLine();
+//
+// double min = array[0];
+// double max = array[0];
+//
+// for (int i = 0; i < count; i++)
+// {
+//     if (array[i] > max)
+//     {
+//         max = array[i];
+//     }
+//     else if (array[i] < min)
+//     {
+//         min = array[i];
+//     }
+// }
+//
+// Console.WriteLine($"\nМинимальный = {min} | Максимальный = {max}");
+// Console.WriteLine($"\nРазница между Мин и Макс злементом = {max - min}");
+//
+//-----------------------------------------------------
+//
+// Задача 4**(не обязательно): Дано натуральное число в
+// диапазоне от 1 до 100 000. Создайте массив, состоящий
+// из цифр этого числа. Старший разряд числа должен
+// располагаться на 0-м индексе массива, младший – на
+// последнем. Размер массива должен быть равен количеству цифр.
+//
+// Решение:
+//
+Console.WriteLine("Введите число в диапазоне от 1 до 100 000");
+int num = Convert.ToInt32(Console.ReadLine());
+int arraySize = 0;
+int temp = num;
 
-for (int i = 0; i < count; i++)
+while (temp % 10 > 0)
 {
-    array[i] = new Random().Next(101, 10000);
-    array[i] /= 100;
+    arraySize++;
+    // Console.WriteLine("Размер массива: " + arraySize);
+    temp /= 10;
+    // Console.WriteLine("Остаток числа: " + temp);
+}
+
+int[] array = new int[arraySize];
+
+if (num >= 1 && num <= 100000)
+{
+    temp = num;
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = temp % 10;
+        temp /= 10;
+        // Console.Write(array[i] + " ");
+    }
+}
+else
+{
+    Console.WriteLine("Число не подходит!");
+    return;
+}
+
+for (int i = array.Length - 1; i > -1; i--)
+{
+    // Console.Write(arraySize + "_");
+    // Console.Write(array.Length + "_");
+    // Console.Write(i + "_!!!_");
     Console.Write(array[i] + " ");
 }
-
-Console.WriteLine();
-
-double min = array[0];
-double max = array[0];
-
-for (int i = 0; i < count; i++)
-{
-    if (array[i] > max)
-    {
-        max = array[i];
-    }
-    else if (array[i] < min)
-    {
-        min = array[i];
-    }
-}
-
-Console.WriteLine($"\nМинимальный = {min} | Максимальный = {max}");
-Console.WriteLine($"\nРазница между Мин и Макс злементом = {max - min}");
