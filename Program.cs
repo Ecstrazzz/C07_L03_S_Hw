@@ -102,9 +102,7 @@ int temp = num;
 while (temp % 10 > 0)
 {
     arraySize++;
-    // Console.WriteLine("Размер массива: " + arraySize);
     temp /= 10;
-    // Console.WriteLine("Остаток числа: " + temp);
 }
 
 int[] array = new int[arraySize];
@@ -116,7 +114,6 @@ if (num >= 1 && num <= 100000)
     {
         array[i] = temp % 10;
         temp /= 10;
-        // Console.Write(array[i] + " ");
     }
 }
 else
@@ -127,8 +124,5 @@ else
 
 for (int i = array.Length - 1; i > -1; i--)
 {
-    // Console.Write(arraySize + "_");
-    // Console.Write(array.Length + "_");
-    // Console.Write(i + "_!!!_");
     Console.Write(array[i] + " ");
 }
